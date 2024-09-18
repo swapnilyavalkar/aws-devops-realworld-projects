@@ -161,7 +161,7 @@ By attaching this role, your jenkins EC2 instance now has the permissions necess
    This *webapp-ssh-credentials* credential will be used by Jenkins server to connect to Web App over SSH connection for deploying application and installing dependencies.
 
 2. **Create Jenkinsfile**:
-   - In your (GitHub repository)[https://github.com/swapnilyavalkar/DynamicWeb-NodeApp], create the `Jenkinsfile` with the following contents to define the pipeline:
+   - In your [GitHub repository](https://github.com/swapnilyavalkar/DynamicWeb-NodeApp), create the `Jenkinsfile` with the following contents to define the pipeline:
 
      ```groovy
       pipeline {
