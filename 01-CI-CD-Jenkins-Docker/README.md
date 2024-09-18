@@ -21,6 +21,15 @@
 
 ---
 
+## Tools and Technologies
+
+- **Jenkins**: To automate the deployment process.
+- **GitHub**: To store and manage the application's source code.
+- **Docker**: To pull and push the images.
+- **AWS EC2**: For deploying and hosting the application.
+
+## Setup Instructions
+
 ### Step 1: Launch an EC2 Instance
 
 1. **Navigate to AWS Console**:  
