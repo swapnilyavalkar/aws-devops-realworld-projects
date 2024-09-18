@@ -163,64 +163,65 @@ By attaching this role, your jenkins EC2 instance now has the permissions necess
 2. **Create Jenkinsfile**:
    - In your [GitHub repository](https://github.com/swapnilyavalkar/DynamicWeb-NodeApp), create the `Jenkinsfile` with the following contents to define the pipeline:
 
-     ```groovy
-            pipeline {
-            agent any
-            stages {
-               stage('Clone Repository') {
-                     steps {
-                        sshPublisher(publishers: [
-                           sshPublisherDesc(configName: 'webapp-ssh-credentials', transfers: [
-                                 sshTransfer(execCommand: '''
-                                    set -e
-                                    # Clone the repository into /home/ubuntu/DynamicWeb-NodeApp
-                                    cd /home/ubuntu
-                                    if [ ! -d "DynamicWeb-NodeApp" ]; then
-                                       git clone https://github.com/swapnilyavalkar/DynamicWeb-NodeApp.git
-                                    else
-                                       cd DynamicWeb-NodeApp
-                                       git pull origin main
-                                    fi
-                                 ''')
-                           ])
-                        ])
-                     }
-               }
-               stage('Install Dependencies on EC2') {
-                     steps {
-                        sshPublisher(publishers: [
-                           sshPublisherDesc(configName: 'webapp-ssh-credentials', transfers: [
-                                 sshTransfer(execCommand: '''
-                                    set -e
-                                    # Install Node.js and npm
-                                    sudo apt-get update
-                                    sudo apt-get install -y nodejs npm
-
-                                    # Install application dependencies
-                                    cd /home/ubuntu/DynamicWeb-NodeApp
-                                    npm install
-                                 ''')
-                           ])
-                        ])
-                     }
-               }
-               stage('Deploy and Start App') {
-                     steps {
-                        sshPublisher(publishers: [
-                           sshPublisherDesc(configName: 'webapp-ssh-credentials', transfers: [
-                                 sshTransfer(execCommand: '''
-                                    set -e
-                                    # Start the application using nohup and run it in the background
-                                    cd /home/ubuntu/DynamicWeb-NodeApp
-                                    nohup node app.js &> app.log &
-                                 ''')
-                           ])
-                        ])
-                     }
-               }
+```groovy
+pipeline {
+    agent any
+    stages {
+        stage('Clone Repository') {
+            steps {
+                sshPublisher(publishers: [
+                    sshPublisherDesc(configName: 'webapp-ssh-credentials', transfers: [
+                        sshTransfer(execCommand: '''
+                            set -e
+                            # Clone the repository into /home/ubuntu/DynamicWeb-NodeApp
+                            cd /home/ubuntu
+                            if [ ! -d "DynamicWeb-NodeApp" ]; then
+                                git clone https://github.com/swapnilyavalkar/DynamicWeb-NodeApp.git
+                            else
+                                cd DynamicWeb-NodeApp
+                                git pull origin main
+                            fi
+                        ''')
+                    ])
+                ])
             }
-         }
-     ```
+        }
+        stage('Install Dependencies on EC2') {
+            steps {
+                sshPublisher(publishers: [
+                    sshPublisherDesc(configName: 'webapp-ssh-credentials', transfers: [
+                        sshTransfer(execCommand: '''
+                            set -e
+                            # Install Node.js and npm
+                            sudo apt-get update
+                            sudo apt-get install -y nodejs npm
+
+                            # Install application dependencies
+                            cd /home/ubuntu/DynamicWeb-NodeApp
+                            npm install
+                            npm install express
+                        ''')
+                    ])
+                ])
+            }
+        }
+        stage('Deploy and Start App') {
+            steps {
+                sshPublisher(publishers: [
+                    sshPublisherDesc(configName: 'webapp-ssh-credentials', transfers: [
+                        sshTransfer(execCommand: '''
+                            set -e
+                            # Start the application using nohup and run it in the background
+                            cd /home/ubuntu/DynamicWeb-NodeApp
+                            nohup node app.js &> app.log &
+                        ''')
+                    ])
+                ])
+            }
+        }
+    }
+}
+```
      
 3. **Create a Jenkins Pipeline**: 
      - From the Jenkins dashboard, click **New Item**.
