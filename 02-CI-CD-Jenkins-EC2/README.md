@@ -199,7 +199,6 @@ pipeline {
                             # Install application dependencies
                             cd /home/ubuntu/DynamicWeb-NodeApp
                             npm install
-                            npm install express
                         ''')
                     ])
                 ])
