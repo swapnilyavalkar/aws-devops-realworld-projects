@@ -256,4 +256,7 @@
 3. **Access the Application**:
    Open `http://your-ec2-public-ip:3000` to view the deployed app.
 
+4. **Screenshot**:
+
+   ![Screenshot](./screenshot.png)
 ---
