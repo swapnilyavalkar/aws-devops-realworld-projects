@@ -346,20 +346,21 @@ You can test the API using **CURL** commands or an **HTML front-end**.
 
 ### **Step 5: HTML Front-End** (Optional)
 
-You can host the **![HTML](./scripts/index.html)** page in an **S3** bucket to test the API through a front-end interface.
+You can host the **<a href="./scripts/index.html">HTML File</a>** page in an **S3** bucket to test the API through a front-end interface.
 
 1. **Create an S3 Bucket with Public Access:**
    - Open the **S3 Console**.
    - Click **Create Bucket** and provide a unique name (e.g., `my-html-hosting`).
 
 2. **Upload HTML File:**
-   - Upload the **![HTML](./scripts/index.html)** file.
+   - Upload the **<a href="./scripts/index.html">HTML File</a>** file.
 
 3. **Configure Bucket for Static Website Hosting:**
    - Enable **Static Website Hosting** under **Properties**.
 
 4. **Make the Bucket Public:**
    - Set the correct bucket policy for public access to the `index.html`.
+
     ```json
         {
         "Version": "2012-10-17",
@@ -376,11 +377,24 @@ You can host the **![HTML](./scripts/index.html)** page in an **S3** bucket to t
 
 ---
 
-### Screenshots:
+### **Screenshots:**
 
+1. **create-functions.png**: Displays the AWS Lambda function creation page, where the CRUD Lambda functions are set up.
+2. **dev-stage.png**: Shows the API Gateway stage deployment (Dev), providing the URL for testing the endpoints.
+3. **CloudWatch-log-groups.png**: Shows the log groups in CloudWatch where Lambda function logs are stored.
+4. **lambda-functions.png**: Displays a list of Lambda functions configured for the CRUD operations.
+5. **index-s3-file.png**: Shows the S3 bucket where the HTML front-end is hosted.
+6. **resources.png**: Overview of the AWS resources created (Lambda, DynamoDB, API Gateway).
+7. **table.png**: Shows the DynamoDB table structure used for storing the item records.
 
 ---
-### Conclusion:
-In this project, we successfully built a serverless API using AWS Lambda, API Gateway, and DynamoDB. We also created a simple HTML front-end to interact with the API, which is hosted in an S3 bucket. This approach showcases how to manage CRUD operations and leverage serverless technologies effectively.
+
+### **Scripts:**
+
+1. **create-items.js**: Script used for the Lambda function to create new items in DynamoDB.
+2. **delete-items.js**: Script for deleting items from the DynamoDB table.
+3. **get-items.js**: Script for retrieving items from the DynamoDB table using the Lambda function.
+4. **update-items.js**: Script for updating existing items in the DynamoDB table.
+5. **index.html**: Front-end HTML file to interact with the API, hosted on S3.
 
 ---
