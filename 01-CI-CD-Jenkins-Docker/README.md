@@ -12,7 +12,7 @@
 
 - **Real-Life Use Case**:
 
-   At **Spotify**, engineers frequently push updates to various microservices that power features like playlists, song recommendations, and user profiles. To ensure fast and reliable updates, Spotify uses a CI/CD pipeline powered by Jenkins and Docker. 
+   At companies like **Spotify**, engineers frequently push updates to various microservices that power features like playlists, song recommendations, and user profiles. To ensure fast and reliable updates, Spotify uses a CI/CD pipeline powered by Jenkins and Docker. 
 
    - When developers push code to GitHub, Jenkins automatically pulls the code, builds a Docker image, runs tests, and pushes the image to Docker Hub.
    - The updated Docker images are then deployed to production, ensuring consistent environments across development, testing, and production.
