@@ -39,6 +39,14 @@ Ensure the following prerequisites are met:
    - Click **Create**.
 
 ### **Step 4: Create ECS Task Definition**
+You're absolutely right! ECS needs to know that the image is being pulled from **Docker Hub**, and additional configuration steps are required to properly pull the Docker image from an external repository (like Docker Hub) instead of the default Amazon ECR.
+
+Let me update those steps to include the necessary details on how to configure ECS to pull the image from **Docker Hub**.
+
+---
+
+### **Step 4: Create ECS Task Definition**
+
 1. **Create a New Task Definition**:
    - Choose **Fargate** as the launch type.
    - Click **Create new Task Definition** and name it (e.g., `AWSFeaturesExplorerTask`).
@@ -47,14 +55,27 @@ Ensure the following prerequisites are met:
    - Set up your container configuration:
      - **Container name**: `AWSFeaturesExplorerContainer`
      - **Image**: Use the Docker Hub image `swapnilyavalkar/aws-features-explorer-app:latest`.
+       - Since this image is being pulled from Docker Hub (an external registry), you need to configure the task definition to explicitly pull from Docker Hub by specifying the full image URL (`docker.io/swapnilyavalkar/aws-features-explorer-app:latest`).
      - **Memory**: Choose memory (e.g., 512 MB).
      - **Port mappings**: Set container port to `80` (since Nginx uses port 80 by default).
    - Click **Add**.
 
-3. **Task Role**:
-   - Assign a task execution role (e.g., `ecsTaskExecutionRole`) that allows ECS to pull images and send logs to CloudWatch.
+3. **Allow ECS to Pull Images from Docker Hub**:
+   - You must update your ECS task execution role to allow ECS to pull Docker Hub images:
+     - Attach the `AmazonECSTaskExecutionRolePolicy` policy to the task role (e.g., `ecsTaskExecutionRole`) so ECS has permission to pull Docker images from external registries.
+     - Ensure the IAM role you are using has the necessary permissions for external registry access.
 
-4. **Create Task Definition**.
+4. **Task Role**:
+   - Ensure the task execution role (e.g., `ecsTaskExecutionRole`) is attached. This allows ECS to pull images from Docker Hub and send logs to CloudWatch.
+
+5. **Create Task Definition**:
+   - Click **Create** to finalize the task definition.
+
+---
+
+### **Important Notes**:
+- **External Docker Registry Access**: When pulling images from Docker Hub, ECS uses the standard Docker Hub URL prefix (`docker.io`). By explicitly specifying the image as `docker.io/swapnilyavalkar/aws-features-explorer-app:latest`, ECS will know to pull it from Docker Hub.
+- **ECS Task Execution Role**: This role must have the correct permissions to pull Docker images from any external registry, including Docker Hub. Ensure `AmazonECSTaskExecutionRolePolicy` is attached to the role.
 
 ### **Step 5: Create ECS Service**
 1. **Create a New Service**:
