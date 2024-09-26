@@ -39,14 +39,6 @@ Ensure the following prerequisites are met:
    - Click **Create**.
 
 ### **Step 4: Create ECS Task Definition**
-You're absolutely right! ECS needs to know that the image is being pulled from **Docker Hub**, and additional configuration steps are required to properly pull the Docker image from an external repository (like Docker Hub) instead of the default Amazon ECR.
-
-Let me update those steps to include the necessary details on how to configure ECS to pull the image from **Docker Hub**.
-
----
-
-### **Step 4: Create ECS Task Definition**
-
 1. **Create a New Task Definition**:
    - Choose **Fargate** as the launch type.
    - Click **Create new Task Definition** and name it (e.g., `AWSFeaturesExplorerTask`).
