@@ -1,4 +1,4 @@
-# 05-Microservices-ECS 🚀
+# **05-Microservices-ECS 🚀**
 
 ---
 
@@ -42,7 +42,7 @@
    cd AWS-Features-Explorer-App
    ```
 
-3. **Create the `Dockerfile`**:
+3. **Create the `Dockerfile`**:  
    In the root of the project directory, create a `Dockerfile` to define how the Docker image will be built.
 
    Example `Dockerfile`:
@@ -53,13 +53,13 @@
    CMD ["nginx", "-g", "daemon off;"]
    ```
 
-4. **Build the Docker image**:
+4. **Build the Docker image**:  
    Build the Docker image using the following command:
    ```bash
    docker build -t aws-features-explorer-app .
    ```
 
-5. **Test the Docker image locally**:
+5. **Test the Docker image locally**:  
    Run the Docker container to ensure everything works as expected:
    ```bash
    docker run -d -p 80:80 aws-features-explorer-app
@@ -74,19 +74,19 @@
    - Go to the [Amazon ECR Console](https://console.aws.amazon.com/ecr).
    - Click **Create Repository** and name it `aws-features-explorer-app-repo`.
 
-2. **Authenticate Docker with ECR**:
+2. **Authenticate Docker with ECR**:  
    Run the following command to authenticate Docker with ECR:
    ```bash
    aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
    ```
 
-3. **Tag the Docker image**:
+3. **Tag the Docker image**:  
    Tag your Docker image to prepare it for pushing to ECR:
    ```bash
    docker tag aws-features-explorer-app:latest <aws_account_id>.dkr.ecr.<region>.amazonaws.com/aws-features-explorer-app-repo:latest
    ```
 
-4. **Push the image to ECR**:
+4. **Push the image to ECR**:  
    Push the Docker image to your ECR repository:
    ```bash
    docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/aws-features-explorer-app-repo:latest
@@ -114,8 +114,8 @@
    - Select the cluster, task definition, and the number of tasks (e.g., 1 task).
    - Configure networking by selecting a VPC, subnets, and security groups (allow traffic on port 80).
 
-4. **Deploy the service**:
-   - Once the service is created, ECS will automatically deploy the tasks based on the configuration.
+4. **Deploy the service**:  
+   Once the service is created, ECS will automatically deploy the tasks based on the configuration.
 
 ---
 
@@ -161,15 +161,15 @@
 2. **Create a New Build Project**:
    - Click **Create project** to create a new build project in CodeBuild.
 
-3. **Build Project Settings**
+3. **Build Project Settings**:
    - Enter a **Project name**: `aws-features-explorer-build`.
    - **Environment**:
      - **Managed image**: Select **Ubuntu**.
-     - **Runtime**: Select **Standard**
-     - **Image**: Use the latest Docker image (aws/codebuild/standard:5.0 or newer).
+     - **Runtime**: Select **Standard**.
+     - **Image**: Use the latest Docker image (`aws/codebuild/standard:5.0` or newer).
      - **Build specifications**: Instruct CodeBuild on how to build the Docker image using a `buildspec.yml` file.
 
-4. **Create buildspec.yml**:
+4. **Create buildspec.yml**:  
    In the root of your repository, create a file called `buildspec.yml`. This file contains instructions for CodeBuild to build your Docker image and push it to Amazon ECR.
 
    Example `buildspec.yml`:
@@ -199,7 +199,9 @@
    - Select **No artifacts** (as CodeBuild will push the Docker image directly to ECR).
 
 6. **Finish Creating the Build Project**:
-   - Click **Continue to CodePipeline** and select the newly created build project (`aws-features-explorer-build`).
+   - Click **Continue to CodePipeline** and select the newly created build project (`aws-features
+
+-explorer-build`).
 
 7. **Move to Next Step**:
    - Click **Next**.
