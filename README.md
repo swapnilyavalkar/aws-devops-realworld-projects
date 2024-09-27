@@ -116,6 +116,6 @@ This repository is licensed under the MIT License. See the [LICENSE](LICENSE) fi
 ---
 
 ### 📛 Badges
-![License](https://img.shields.io/github/license/swapnilyavalkar/AWS-DevOps-RealWorld-Projects)
-![Stars](https://img.shields.io/github/stars/swapnilyavalkar/AWS-DevOps-RealWorld-Projects)
-![Forks](https://img.shields.io/github/forks/swapnilyavalkar/AWS-DevOps-RealWorld-Projects)
+![License](https://img.shields.io/github/license/swapnilyavalkar/aws-devops-realworld-projects)
+![Stars](https://img.shields.io/github/stars/swapnilyavalkar/aws-devops-realworld-projects)
+![Forks](https://img.shields.io/github/forks/swapnilyavalkar/aws-devops-realworld-projects)

@@ -198,7 +198,7 @@
          stages {
              stage('Clone Repository') {
                  steps {
-                     git branch: 'main', url: 'https://github.com/swapnilyavalkar/dynamicweb-NodeApp.git'
+                     git branch: 'main', url: 'https://github.com/swapnilyavalkar/dynamicweb-nodeapp.git'
                  }
              }
              stage('Build Docker Image') {

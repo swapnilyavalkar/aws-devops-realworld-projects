@@ -34,7 +34,7 @@
 1. **Clone the repository**:
    - Open a terminal and run:
      ```bash
-     git clone https://github.com/swapnilyavalkar/aws-Features-Explorer-App.git
+     git clone https://github.com/swapnilyavalkar/aws-features-explorer-app.git
      ```
 
 2. **Navigate into the project directory**:
