@@ -39,7 +39,7 @@
 
 2. **Navigate into the project directory**:
    ```bash
-   cd AWS-Features-Explorer-App
+   cd aws-features-explorer-app
    ```
 
 3. **Create the `Dockerfile`**:  
