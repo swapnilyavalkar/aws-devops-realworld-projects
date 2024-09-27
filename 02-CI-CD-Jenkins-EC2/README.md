@@ -49,7 +49,7 @@ This kind of automation reduces downtime, ensures fast releases, and allows for 
 
 ### Step 2: Set Up Jenkins on separate EC2 instance
 
-1. Refer to the [01-CI-CD-Jenkins-Docker](https://github.com/swapnilyavalkar/AWS-DevOps-RealWorld-Projects/tree/main/01-CI-CD-Jenkins-Docker) Project for detailed Jenkins installation steps.
+1. Refer to the [01-CI-CD-Jenkins-Docker](https://github.com/swapnilyavalkar/aws-DevOps-RealWorld-Projects/tree/main/01-CI-CD-Jenkins-Docker) Project for detailed Jenkins installation steps.
 2. Go to Manage Jenkins → Manage Plugins → Available tab. Search for the `Publish Over SSH` plugin and install it.
 
 ### Step 3: Attach an IAM Role to the Jenkins EC2 Instance with Necessary Permissions
@@ -161,7 +161,7 @@ By attaching this role, your jenkins EC2 instance now has the permissions necess
    This *webapp-ssh-credentials* credential will be used by Jenkins server to connect to Web App over SSH connection for deploying application and installing dependencies.
 
 2. **Create Jenkinsfile**:
-   - In your [GitHub repository](https://github.com/swapnilyavalkar/DynamicWeb-NodeApp), create the `Jenkinsfile` with the following contents to define the pipeline:
+   - In your [GitHub repository](https://github.com/swapnilyavalkar/dynamicweb-NodeApp), create the `Jenkinsfile` with the following contents to define the pipeline:
 
 ```groovy
 pipeline {
@@ -176,7 +176,7 @@ pipeline {
                             # Clone the repository into /home/ubuntu/DynamicWeb-NodeApp
                             cd /home/ubuntu
                             if [ ! -d "DynamicWeb-NodeApp" ]; then
-                                git clone https://github.com/swapnilyavalkar/DynamicWeb-NodeApp.git
+                                git clone https://github.com/swapnilyavalkar/dynamicweb-NodeApp.git
                             else
                                 cd DynamicWeb-NodeApp
                                 git pull origin main
