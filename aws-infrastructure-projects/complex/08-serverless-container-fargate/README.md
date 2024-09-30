@@ -1,4 +1,4 @@
-# **04-Fargate-Serverless-Container 🚀**
+# **08-Serverless-Container-Fargate 🚀**
 
 ---
 

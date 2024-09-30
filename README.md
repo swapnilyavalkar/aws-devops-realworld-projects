@@ -49,6 +49,7 @@ Each project folder is organized into **AWS Infrastructure Projects** and **DevO
  ┃ ┃ ┣ 📂 02-data-lakehouse-redshift-s3
  ┃ ┃ ┣ 📂 03-data-governance-lakeformation
  ┃ ┃ ┣ 📂 04-hybrid-cloud-aws-outposts-s3
+ ┃ ┃ ┣ 📂 05-edge-computing-greengrass
  ┃ ┃ ┣ 📂 06-security-compliance-macie-guardduty
  ┃ ┃ ┣ 📂 07-codeartifact-codepipeline
  ┃ ┃ ┣ 📂 08-serverless-container-fargate
@@ -119,11 +120,12 @@ Each project is packed with real-world use cases and detailed steps for masterin
 2. 🏛️ **Data Lakehouse with Redshift and S3**  
 3. 🔑 **Data Governance with AWS Lake Formation**  
 4. 🏗️ **Hybrid Cloud Architecture with AWS Outposts and S3**  
-5. 🔍 **Security and Compliance with Amazon Macie and GuardDuty**  
-6. ⚡ **Package Management and Automation with AWS CodeArtifact and CodePipeline**  
-7. 🛳️ **Serverless Container Deployment with AWS Fargate**  
-8. ⚡ **RDS Proxy and Aurora Optimization**  
-9. 🛳️ **Serverless API with AWS Lambda**
+5. 🌐 **Edge Computing with AWS Greengrass**  
+6. 🔍 **Security and Compliance with Amazon Macie and GuardDuty**  
+7. ⚡ **Package Management and Automation with AWS CodeArtifact and CodePipeline**  
+8. 🛳️ **Serverless Container Deployment with AWS Fargate**  
+9. ⚡ **RDS Proxy and Aurora Optimization**  
+10. 🛳️ **Serverless API with AWS Lambda**
 
 ---
 
@@ -141,7 +143,6 @@ Each project is packed with real-world use cases and detailed steps for masterin
 2. 🚢 **Containerized Microservices with EKS**  
 3. 🔄 **Step Functions for Orchestrating Workflows**  
 4. 📊 **Real-time Data Analytics with Kinesis Data Streams and Lambda**  
-5. 🛳️ **Serverless Container Deployment with AWS Fargate**
 
 #### **Hard**
 1. 🌀 **Deploying Microservices on AWS ECS**  

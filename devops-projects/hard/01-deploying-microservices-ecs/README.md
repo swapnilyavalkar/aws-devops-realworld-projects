@@ -1,4 +1,4 @@
-# **05-Microservices-ECS 🚀**
+# 01-deploying-microservices-ecs 🚀
 
 ---
 

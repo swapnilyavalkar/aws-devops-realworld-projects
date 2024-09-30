@@ -1,8 +1,6 @@
-# 01 CI/CD Pipeline using Jenkins and Docker
+# 01-ci-cd-jenkins-docker 
 
----
-
-### Overview:
+## Overview:
 
 - **What we are doing**:  
    We are automating the build and deployment process using Jenkins to create Docker images and push them to a Docker registry. This ensures that code changes are automatically built, tested, and deployed seamlessly using a Continuous Integration/Continuous Deployment (CI/CD) pipeline.

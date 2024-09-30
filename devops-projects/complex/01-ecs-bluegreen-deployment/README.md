@@ -1,4 +1,4 @@
-# **06-ECS-BlueGreen-Deployment 🚀**
+# 01-ECS-BlueGreen-Deployment 🚀
 
 ---
 

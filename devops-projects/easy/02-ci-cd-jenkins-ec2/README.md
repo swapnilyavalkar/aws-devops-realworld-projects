@@ -1,4 +1,4 @@
-# CI/CD Pipeline with Jenkins on EC2
+# 02-ci-cd-jenkins-ec2 CI/CD Pipeline with Jenkins on EC2
 
 ## Overview:
 

@@ -1,4 +1,4 @@
-# Serverless API using AWS Lambda, API Gateway, and DynamoDB
+# 10-serverless-container-lambda
 
 ## Overview:
 
