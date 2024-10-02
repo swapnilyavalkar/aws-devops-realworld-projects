@@ -3,6 +3,7 @@ streamlit_prophet_env/
 data/
 template.md
 .vscode/
+.gitignore
 
 # Ignore Python virtual environments
 venv/
