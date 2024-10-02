@@ -4,6 +4,7 @@ data/
 template.md
 .vscode/
 .gitignore
+*vscode*
 
 # Ignore Python virtual environments
 venv/
