@@ -2,3 +2,4 @@
 streamlit_prophet_env/
 data/
 template.md
+.vscode/
