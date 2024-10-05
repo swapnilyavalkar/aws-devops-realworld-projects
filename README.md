@@ -28,7 +28,7 @@ Each project folder is organized into **AWS Infrastructure Projects** and **DevO
  ┃ ┃ ┣ 📂 02-s3-crossregion-replication
  ┃ ┃ ┣ 📂 03-security-best-practices-iam
  ┃ ┃ ┣ 📂 04-ec2-autoscaling-loadbalancer
- ┃ ┃ ┣ 📂 05-monitoring-ecs-prometheus-grafana       
+ ┃ ┃ ┣ 📂 05-monitoring-ecs-prometheus-grafana
  ┃ ┃ ┗ 📂 06-infrastructure-as-code-cloudformation
  ┃ ┣ 📂 medium
  ┃ ┃ ┣ 📂 01-multiregion-failover-route53
@@ -36,7 +36,9 @@ Each project folder is organized into **AWS Infrastructure Projects** and **DevO
  ┃ ┃ ┣ 📂 03-automated-backups-aws-backup
  ┃ ┃ ┣ 📂 04-secure-configurations-secretsmanager
  ┃ ┃ ┣ 📂 05-lambdaatedge-content-delivery
- ┃ ┃ ┗ 📂 06-data-lake-s3-athena-glue
+ ┃ ┃ ┣ 📂 06-data-lake-s3-athena-glue
+ ┃ ┃ ┣ 📂 07-s3-event-driven-architecture-with-sns-lambda-sqs
+ ┃ ┃ ┗ 📂 08-serverless-lambda-api-gateway-dynamodb
  ┃ ┣ 📂 hard
  ┃ ┃ ┣ 📂 01-api-security-waf
  ┃ ┃ ┣ 📂 02-vpc-peering-transitive-routing
@@ -61,27 +63,31 @@ Each project folder is organized into **AWS Infrastructure Projects** and **DevO
  ┃ ┃ ┣ 📂 02-ci-cd-jenkins-ec2
  ┃ ┃ ┣ 📂 03-kubernetes-cluster-kops
  ┃ ┃ ┣ 📂 04-kubernetes-cluster-terraform
- ┃ ┃ ┗ 📂 05-automated-deployment-codebuild
+ ┃ ┃ ┣ 📂 05-automated-deployment-codebuild
+ ┃ ┃ ┗ 📂 06-ci-cd-jenkins-github-elastic-beanstalk
  ┃ ┣ 📂 medium
  ┃ ┃ ┣ 📂 01-automated-deployment-codedeploy
- ┃ ┃ ┣ 📂 02-containerized-microservices-eks
+ ┃ ┃ ┣ 📂 02-containerized-microservices-ecs
  ┃ ┃ ┣ 📂 03-stepfunctions-orchestration
  ┃ ┃ ┣ 📂 04-realtime-dataanalytics-kinesis-lambda
- ┃ ┃ ┗ 📂 05-serverless-container-fargat
+ ┃ ┃ ┣ 📂 05-containerized-microservices-eks
+ ┃ ┃ ┗ 📂 06-automated-microservices-deployment-ecs-cicd
  ┃ ┣ 📂 hard
  ┃ ┃ ┣ 📂 01-deploying-microservices-ecs
  ┃ ┃ ┣ 📂 02-music-streaming-service-aws
  ┃ ┃ ┣ 📂 03-video-streaming-service-aws
- ┃ ┃ ┗ 📂 04-serverless-webapp-aws-amplify
- ┃ ┃  
+ ┃ ┃ ┣ 📂 04-serverless-webapp-aws-amplify
+ ┃ ┃ ┣ 📂 05-scalable-node.js-app-deployment-elastic-beanstalk
+ ┃ ┃ ┗ 📂 06-enterprise-application-deployment-kubernetes-terraform-ansible-gitlab
  ┃ ┣ 📂 complex
  ┃ ┃ ┣ 📂 01-ecs-bluegreen-deployment
  ┃ ┃ ┣ 📂 02-music-streaming-portal-amazonmusic
  ┃ ┃ ┣ 📂 03-video-streaming-netflix
  ┃ ┃ ┣ 📂 04-image-processing-sagemaker
- ┃ ┃ ┣ 📂 05-sagemaker-ml-apps-and-pipeline
- ┃ ┃ ┣ 📂 06-advanced-cicd-pipeline-codepipeline
- ┃ ┃ ┗ 📂 07-realtime-video-processing-kinesis-s3
+ ┃ ┃ ┣ 📂 05-advanced-cicd-pipeline-codepipeline
+ ┃ ┃ ┣ 📂 06-sagemaker-ml-pipeline
+ ┃ ┃ ┣ 📂 07-realtime-video-processing-kinesis-s3
+ ┃ ┃ ┗ 📂 08-full-stack-cicd-pipeline-jenkins-aws-codedeploy-nginx
 ```
 ---
 
