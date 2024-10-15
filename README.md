@@ -4,7 +4,7 @@
 
 Hello! 👋 Welcome to the **AWS DevOps RealWorld Projects Repository**! 🚀 Whether you're just starting or advancing in the cloud journey, this collection of projects will empower you to **master AWS and DevOps** with real-world scenarios! 🌍 Let’s build the future together.
 
-My name is **Swapnil Yavalkar**, and I have 13+ years of experience working with multiple tools and technologies. Over the last 7-8 years, I've been deeply involved in the AWS and DevOps space, designing and deploying scalable cloud infrastructures. This repository reflects that journey, designed to help you learn and apply AWS services in **real-world projects** used by industry leaders!
+My name is **Swapnil Yavalkar**, and I have 13+ years of experience working with multiple tools and technologies. Over the last 5-6 years, I've been deeply involved in the AWS and DevOps space, designing and deploying scalable cloud infrastructures. This repository reflects that journey, designed to help you learn and apply AWS services in **real-world projects** used by industry leaders!
 
 ## 🎯 Why This Repository?
 
