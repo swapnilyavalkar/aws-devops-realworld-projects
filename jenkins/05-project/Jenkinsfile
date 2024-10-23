@@ -1,0 +1,41 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Build and Test Parallely"){
+            parallel{
+                stage('Build'){
+                    step{
+                        echo 'Building...'
+                        sh 'npm run build'    
+                    }
+                    
+                }
+
+                stage('Test'){
+                    steps{
+                        echo 'Running test...'
+                        sh 'npm run test'
+                    }
+                }
+            }
+            stage('Deploy'){
+                steps{
+                    echo 'Deploying...'
+                }
+
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}

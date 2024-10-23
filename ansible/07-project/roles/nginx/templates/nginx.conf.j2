@@ -1,0 +1,9 @@
+server{
+    listen 80;
+    server_name {{ansible_hostname}};
+    location /{
+        root /var/www/html;
+        index index.html;
+    } 
+
+}

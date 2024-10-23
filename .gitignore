@@ -1,0 +1,17 @@
+.aws/
+.docker/
+.ssh/
+.vscode/
+node_modules/
+dist/
+lib/
+.package-lock.json/
+.terraform/
+build/
+*.log
+*.key
+*.pem
+*.config
+*.json
+lib/
+__pycache__/

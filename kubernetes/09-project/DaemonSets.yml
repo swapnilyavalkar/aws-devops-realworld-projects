@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-node-monitor
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: my-node-monitor
+  template:
+    metadata:
+      labels:
+        app: my-node-monitor
+    spec:
+      containers:
+        - name: my-node-monitor
+          image: node-monitor:latest
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi

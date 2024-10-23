@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("Install") {
+            steps {
+                echo "========Installing========"
+                sh '''
+                    # Install Node.js
+                    curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+                    apt-get install -y nodejs
+
+                    # Verify installation
+                    node -v
+                    npm -v
+
+                    # Install dependencies
+                    npm install
+                '''
+            }
+        }
+
+        stage("Build") {
+            steps {
+                echo "========Building========"
+                sh 'npm run build'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "========Testing========"
+                sh 'npm run test'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "========always========"
+        }
+        success {
+            echo "========pipeline executed successfully========"
+        }
+        failure {
+            echo "========pipeline execution failed========"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+---
+- name: Use encrypted variable
+  hosts: wsl
+  become: yes
+  vars_files: 
+    - secrets.yml
+  tasks:
+    - name: Show db password
+      debug:
+        var: db_password

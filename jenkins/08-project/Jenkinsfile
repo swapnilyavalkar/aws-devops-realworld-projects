@@ -1,0 +1,32 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Test with Retry"){
+            steps{
+                retry(3){
+                    sh 'npm run test'  // Retries up to 3 times if it fails
+                }       
+        }
+    }
+    stage('Deploy with Timeout'){
+        steps{
+            timeout(time: 5, unit:'MINUTES'){
+                sh './deploy.sh'  // Times out if not completed in 5 minutes
+                }
+            }
+        }
+    }
+    
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}

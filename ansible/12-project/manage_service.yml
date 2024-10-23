@@ -1,0 +1,15 @@
+---
+- name: Manage Apache Service
+  hosts: wsl
+  become: yes
+
+  tasks:
+    - name: Ensure Apache is installed
+      apt:
+        name: apache2
+        state: present
+
+    - name: Restart Apache service
+      service:
+        name: apache2
+        state: restarted

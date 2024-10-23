@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replica-set
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: my-replica-set-container
+          image: nginx
+          ports:
+            - name: web
+              containerPort: 80
+              protocol: TCP
+          env:
+            - name: prod

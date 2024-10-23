@@ -1,0 +1,6 @@
+---
+- name: Config nginx
+  hosts: wsl
+  become: yes
+  roles: 
+    - nginx

@@ -1,0 +1,21 @@
+---
+- name: Copy file to remote server
+  hosts: wsl
+  become: yes
+
+  tasks:
+    - name: Copy index.html to /var/www/html
+      copy:
+        src: ./index.html
+        dest: /var/www/html/index.html
+        mode: '0644'
+
+    - name: Run a command with retries
+      command: curl -s localhost
+      retries: 3  # Retry the command
+      delay: 5  # Delay between retries (in seconds)
+      register: result
+      until: result.rc == 0  # Run until command succeeds
+    
+    - debug:
+        var: result.stdout

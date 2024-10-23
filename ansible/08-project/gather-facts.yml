@@ -1,0 +1,7 @@
+---
+- name: Gather host information
+  hosts: wsl
+  tasks:
+    - name: Display OS version
+      debug:
+        var: ansible_distribution_version

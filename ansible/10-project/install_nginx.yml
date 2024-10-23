@@ -1,0 +1,20 @@
+---
+- name: Install Nginx on Ubuntu
+  hosts: wsl
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes

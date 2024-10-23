@@ -1,0 +1,35 @@
+---
+- name:  Install nginx
+  hosts: wsl
+  become: yes
+  vars:
+    package_name: nginx
+  tasks:
+    - name: Check if "{{ package_name }}" is installed
+      shell: dpkg -l | grep "{{package_name}}"
+      register: result
+      ignore_errors: yes
+
+    - debug:
+        var: result.stdout
+
+    - name: Install "{{ package_name }}"
+      apt:
+        name: "{{ item }}"
+        state: present
+        purge: yes
+      with_items:
+          - nginx-common
+          - nginx-light
+          - libnginx-mod-http-echo
+          
+    - name: Check if "{{ package_name }}" is installed
+      shell: dpkg -l | grep "{{package_name}}"
+      register: result
+      ignore_errors: yes
+
+    - debug:
+        var: result.stdout
+
+
+

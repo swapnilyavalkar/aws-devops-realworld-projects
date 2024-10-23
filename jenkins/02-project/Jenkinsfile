@@ -1,0 +1,32 @@
+pipeline{
+    agent{
+        docker{
+            image 'node:16-alpine'
+            args '-u root' // Run as root user to install packages
+        }
+    }
+    stages{
+        stage("Install depedencies"){
+            steps{
+                echo "========Installing========"
+                sh 'npm install'
+            }
+        stage('Test'){
+            steps{
+                sh 'npm run test'
+            }
+        }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}

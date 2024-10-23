@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cron-job
+  namespace: default
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: my-cr-job-task
+              image: busybox
+              args:
+                [
+                  "/bin/sh",
+                  "-c",
+                  "date; echo Hello from the Kubernetes cluster",
+                ]
+          restartPolicy: OnFailure

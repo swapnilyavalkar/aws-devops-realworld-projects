@@ -1,0 +1,44 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Build"){
+            steps{
+                echo 'Building...'
+                sh 'npm run build'
+                }
+            }
+        
+        stage('Deploy to Staging'){
+            when{
+                branch 'Development'
+            }
+            steps{
+                echo 'Deploying to Staging...'
+            }
+        }
+
+        stage('Deploy to Production'){
+            when{
+                allof{
+                    branch 'master'
+                    environment name: 'DEPLOY_ENV', value:'Production'
+                }
+            }
+            steps{
+                echo 'Deploying to Production...'
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
