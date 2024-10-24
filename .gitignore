@@ -11,7 +11,24 @@ package-lock.json
 .dockerignore
 secret
 dnd-check-schema-table-structure.py
-.terraform
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+*.vault_pass
+group_vars/
+host_vars/
+kubeconfig
+.config
+credentials
+.env
+*.pem
+*.key
+*.p12
+.gitlab-ci.yml
+.travis.yml
+.github/workflows/*.yml
 
 
 # Ignore Python virtual environments
