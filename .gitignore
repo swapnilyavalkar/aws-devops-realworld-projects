@@ -11,6 +11,8 @@ package-lock.json
 .dockerignore
 secret
 dnd-check-schema-table-structure.py
+.terraform
+
 
 # Ignore Python virtual environments
 venv/
